@@ -1,4 +1,4 @@
-// Java-Script 자료형과 키워드
+// javascript 자료형과 키워드
 
 // 1 : typeof all
 

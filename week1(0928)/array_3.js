@@ -29,9 +29,9 @@ console.log("================");
 //forEach((value, index, array)=>{})
 arrr.forEach((v, i, a) => console.log(v));
 arrr.forEach((v, i, a) => {
-  if (v == 3) {
-    console.log("index : " + i + ", value : ", +v + ", array : " + a);
-  }
+    if (v == 3) {
+        console.log("index : " + i + ", value : ", +v + ", array : " + a);
+    }
 });
 //forEach는 break와 continue 없기 때문에 잘 쓰지 않음.
 
@@ -39,8 +39,8 @@ console.log("================");
 
 //some((value, index, array)=>{})
 arrr.some((v, i, a) => {
-  if (v == 5) return true;
-  console.log("index : " + i + ", value : ", +v + ", array : " + a);
+    if (v == 5) return true;
+    console.log("index : " + i + ", value : ", +v + ", array : " + a);
 });
 //some은 false-continue true-break로 사용함.
 

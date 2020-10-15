@@ -2,11 +2,11 @@
 
 //inner function
 function add(a, b) {
-  function square(x) {
-    return x * x;
-  }
-  result = square(a) + square(b);
-  console.log(result);
+    function square(x) {
+        return x * x;
+    }
+    result = square(a) + square(b);
+    console.log(result);
 }
 
 add(1, 2);
@@ -14,11 +14,11 @@ add(1, 2);
 //closure
 //함수와 함수가 선언된 어휘적 환경의 조합
 function makeFunc() {
-  var name = "Mozilla";
-  function displayName() {
-    alert(name);
-  }
-  return displayName;
+    var name = "Mozilla";
+    function displayName() {
+        alert(name);
+    }
+    return displayName;
 }
 
 var myFunc = makeFunc();
@@ -33,13 +33,13 @@ const add2 = () => {};
 
 //argument
 function thisArgTest1(a, b, c) {
-  console.log("this:", this);
-  console.log("args:", arguments[0]);
+    console.log("this:", this);
+    console.log("args:", arguments[0]);
 }
 
 const thisArgTest2 = (a, b, c) => {
-  console.log("this:", this);
-  console.log("args:", arguments[0]);
+    console.log("this:", this);
+    console.log("args:", arguments[0]);
 };
 thisArgTest1(1, 2, 3);
 thisArgTest2(1, 2, 3);

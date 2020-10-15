@@ -1,62 +1,62 @@
 //주어진 api로 문제 해결하기
 
 const users = [
-  {
-    id: 1,
-    email: "123@app.com",
-    name: "임태호",
-    phone: null,
-    age: 26,
-    basket: ["사과", "딸기"],
-  },
-  {
-    id: 2,
-    email: "456@app.com",
-    name: "김영만",
-    phone: "010-0000-0000",
-    age: 20,
-    basket: [],
-  },
-  {
-    id: 3,
-    email: null,
-    name: "황주환",
-    phone: "010-0000-0001",
-    age: 20,
-    basket: ["파인애플", "메론", "딸기"],
-  },
-  {
-    id: 4,
-    email: null,
-    name: "김희연",
-    phone: null,
-    age: 26,
-    basket: ["국밥"],
-  },
-  {
-    id: 5,
-    email: "abcd@app.com",
-    name: "심재서",
-    phone: "010-0000-1010",
-    age: 21,
-    basket: ["사과", "딸기", "바나나", "수박"],
-  },
-  {
-    id: 6,
-    email: null,
-    name: "윤철중",
-    phone: "010-0000-1234",
-    age: 20,
-    basket: [],
-  },
-  {
-    id: 7,
-    email: "efg@app.com",
-    name: "정민성",
-    phone: "010-0000-3434",
-    age: 20,
-    basket: ["수박", "딸기"],
-  },
+    {
+        id: 1,
+        email: "123@app.com",
+        name: "임태호",
+        phone: null,
+        age: 26,
+        basket: ["사과", "딸기"],
+    },
+    {
+        id: 2,
+        email: "456@app.com",
+        name: "김영만",
+        phone: "010-0000-0000",
+        age: 20,
+        basket: [],
+    },
+    {
+        id: 3,
+        email: null,
+        name: "황주환",
+        phone: "010-0000-0001",
+        age: 20,
+        basket: ["파인애플", "메론", "딸기"],
+    },
+    {
+        id: 4,
+        email: null,
+        name: "김희연",
+        phone: null,
+        age: 26,
+        basket: ["국밥"],
+    },
+    {
+        id: 5,
+        email: "abcd@app.com",
+        name: "심재서",
+        phone: "010-0000-1010",
+        age: 21,
+        basket: ["사과", "딸기", "바나나", "수박"],
+    },
+    {
+        id: 6,
+        email: null,
+        name: "윤철중",
+        phone: "010-0000-1234",
+        age: 20,
+        basket: [],
+    },
+    {
+        id: 7,
+        email: "efg@app.com",
+        name: "정민성",
+        phone: "010-0000-3434",
+        age: 20,
+        basket: ["수박", "딸기"],
+    },
 ];
 
 // 1번
@@ -65,9 +65,7 @@ console.log(numberOfPersion);
 console.log("===============================");
 
 // 2번
-const criminalUsers = users.filter(
-  (v, i, a) => v.email == null && v.phone == null
-);
+const criminalUsers = users.filter((v, i, a) => v.email == null && v.phone == null);
 console.log(criminalUsers);
 console.log("===============================");
 
@@ -94,22 +92,10 @@ console.log("===============================");
 
 // 6번
 const nextYearUsers = users.map((v, i, a) => {
-  v.age += 1;
-  return v;
+    v.age += 1;
+    return v;
 });
 
 console.log(nextYearUsers);
 
 console.log("===========================================================");
-
-// // 2번 피드백
-// const criminalUsers = users.filter((v, i, a) => !v.email && !v.phone);
-// console.log(criminalUsers);
-// console.log("===============================");
-
-// // 6번 피드백
-// // -> 배열이 설정한대로 저장된다. 겹치지 않으려면 새로 배열을 만들어서 다른 배열을 사용해야한다.
-// const nextYearUsers = users.map((v, i, a) => {
-//   ++v.age;
-//   return v;
-// });

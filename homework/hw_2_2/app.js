@@ -1,48 +1,48 @@
-const express = require("express")
-const app = express()
+const express = require("express");
+const app = express();
 
-const history = []
+const history = [];
 
-app.get('/add',(req,res)=>{
-    const {a,b} = req.query
-    const date = new Date().toLocaleString()
-    const result = Number(a) + Number(b)
+app.get("/add", (req, res) => {
+    const { a, b } = req.query;
+    const date = new Date().toLocaleString();
+    const result = Number(a) + Number(b);
 
-    history.push(date +" / " +`${a}` + " + " + `${b}` + " = " + result)
-    res.json({result})
-})
+    history.push(date + " / " + `${a}` + " + " + `${b}` + " = " + result);
+    res.json({ result });
+});
 
-app.get('/minus',(req,res)=>{
-    const {a,b} = req.query
-    const date = new Date().toLocaleString()
-    const result = Number(a)-Number(b)
-    
-    history.push(date +" / " +`${a}` + " - " + `${b}` + " = " + result)
-    res.json({result})
-})
+app.get("/minus", (req, res) => {
+    const { a, b } = req.query;
+    const date = new Date().toLocaleString();
+    const result = Number(a) - Number(b);
 
-app.get('/multi',(req,res)=>{
-    const {a,b} = req.query
-    const date = new Date().toLocaleString()
-    const result = Number(a)*Number(b)
+    history.push(date + " / " + `${a}` + " - " + `${b}` + " = " + result);
+    res.json({ result });
+});
 
-    history.push(date +" / " +`${a}` + " * " + `${b}` + " = " + result)
-    res.json({result})
-})
+app.get("/multi", (req, res) => {
+    const { a, b } = req.query;
+    const date = new Date().toLocaleString();
+    const result = Number(a) * Number(b);
 
-app.get('/div',(req,res)=>{
-    const {a,b} = req.query
-    const date = new Date.toLocaleString()
-    const result = Number(a)/Number(b)
+    history.push(date + " / " + `${a}` + " * " + `${b}` + " = " + result);
+    res.json({ result });
+});
 
-    history.push(date +" / " +`${a}` + " / " + `${b}` + " = " + result)
-    res.json({result})
-})
+app.get("/div", (req, res) => {
+    const { a, b } = req.query;
+    const date = new Date.toLocaleString();
+    const result = Number(a) / Number(b);
 
-app.get('/history',(req,res)=>{
-    res.json(history.sort())
-})
+    history.push(date + " / " + `${a}` + " / " + `${b}` + " = " + result);
+    res.json({ result });
+});
+
+app.get("/history", (req, res) => {
+    res.json(history.sort());
+});
 
 app.listen(3001, () => {
     console.log("http://localhost:3001");
-  });
+});

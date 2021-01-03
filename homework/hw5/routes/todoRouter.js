@@ -5,24 +5,24 @@ const router = express.Router();
  * @method POST
  * @summary view
  */
-router.post("/", (req, res) => {});
+router.post("/view", (req, res) => {});
 
 /**
  * @method POST
  * @summary insert
  */
-router.post("/", (req, res) => {});
+router.post("/insert", (req, res) => {});
 
 /**
  * @method POST
  * @summary update
  */
-router.post("/", (req, res) => {});
+router.post("/update", (req, res) => {});
 
 /**
  * @method POST
  * @summary delete
  */
-router.delete("/", (req, res) => {});
+router.delete("/delete", (req, res) => {});
 
 module.exports = router;

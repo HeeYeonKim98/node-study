@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 /**
- * @method POST
+ * @method GET
  * @summary view
  */
-router.post("/view", (req, res) => {});
+router.get("/view", (req, res) => {});
 
 /**
  * @method POST
@@ -14,13 +14,13 @@ router.post("/view", (req, res) => {});
 router.post("/insert", (req, res) => {});
 
 /**
- * @method POST
+ * @method PUT
  * @summary update
  */
-router.post("/update", (req, res) => {});
+router.put("/update", (req, res) => {});
 
 /**
- * @method POST
+ * @method DELETE
  * @summary delete
  */
 router.delete("/delete", (req, res) => {});

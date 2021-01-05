@@ -1,19 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const {
-    todoView,
-    todoInsert,
-    todoUpdate,
-    todoDelete,
-    todoDone,
-} = require("../controllers/todoControl");
+const { todoView, todoInsert, todoUpdate, todoDelete } = require("../controllers/todoControl");
 
 /**
  * @method GET
  * @summary view
  */
-router.get("/view", todoView, (req, res) => {
+router.get("/", todoView, (req, res) => {
     res.json({ success: true, message: "todoView 성공", data: req.todoview });
 });
 
@@ -39,14 +33,6 @@ router.put("/update", todoUpdate, (req, res) => {
  */
 router.delete("/delete", todoDelete, (req, res) => {
     res.json({ success: true, message: "todoDelete 성공" });
-});
-
-/**
- * @method PUT
- * @summary isDone
- */
-router.put("/isdone", todoDone, (req, res) => {
-    res.json({ success: true, message: "todoDone 성공" });
 });
 
 module.exports = router;

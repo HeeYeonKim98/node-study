@@ -48,15 +48,4 @@ module.exports = {
             res.json(tododeleteErr);
         }
     },
-
-    todoDone: async (req, res, next) => {
-        const conn = await getConn;
-        try {
-            await conn.query("update todolist set isDone=true where id=?", [req.body.id]);
-            conn.release();
-            next();
-        } catch (tododoneErr) {
-            res.json(tododoneErr);
-        }
-    },
 };

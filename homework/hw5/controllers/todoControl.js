@@ -3,10 +3,10 @@ const { getConn } = require("../database/conn");
 module.exports = {
     todoView: async (req, res, next) => {
         const conn = await getConn;
-
         try {
-            const view = await conn.query("select * from todolistDB");
-            req.todoview = view;
+            const [rows, op] = await conn.query("select * from todolistDB");
+            req.todoview = rows;
+            conn.release();
             next();
         } catch (todoviewErr) {
             res.json(todoviewErr);

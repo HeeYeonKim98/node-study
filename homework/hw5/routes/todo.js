@@ -15,7 +15,7 @@ router.get("/view", todoView, (req, res) => {
  * @method POST
  * @summary insert
  */
-router.post("/insert", (req, res) => {
+router.post("/insert", todoInsert, (req, res) => {
     res.json({ success: true, message: "todoInsert 성공" });
 });
 

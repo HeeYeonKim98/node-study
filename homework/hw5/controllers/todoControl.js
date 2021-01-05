@@ -24,7 +24,39 @@ module.exports = {
         }
     },
 
-    todoUpdate: async (req, res, next) => {},
+    todoUpdate: async (req, res, next) => {
+        const conn = await getConn;
+        try {
+            await conn.query("update todolist set content=? where id=?", [
+                req.body.newContent,
+                req.body.id,
+            ]);
+            conn.release();
+            next();
+        } catch (todoupdateErr) {
+            res.json(todoupdateErr);
+        }
+    },
 
-    todoDelete: async (req, res, next) => {},
+    todoDelete: async (req, res, next) => {
+        const conn = await getConn;
+        try {
+            await conn.query("delete from todolist where id = ?", req.body.id);
+            conn.release();
+            next();
+        } catch (tododeleteErr) {
+            res.json(tododeleteErr);
+        }
+    },
+
+    todoDone: async (req, res, next) => {
+        const conn = await getConn;
+        try {
+            await conn.query("update todolist set isDone=true where id=?", [req.body.id]);
+            conn.release();
+            next();
+        } catch (tododoneErr) {
+            res.json(tododoneErr);
+        }
+    },
 };

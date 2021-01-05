@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const { todoView, todoInsert, todoUpdate, todoDelete } = require("../controllers/todoControl");
+
 /**
  * @method GET
  * @summary view

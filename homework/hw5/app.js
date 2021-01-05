@@ -7,10 +7,10 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const indexRouter = require("./routes/index"); //수정
+const indexRouter = require("./routes/index");
 app.use("/", cors(), indexRouter);
 
-const todoRouter = require("./routes/todo"); //수정
+const todoRouter = require("./routes/todo");
 app.use("/api/todo", cors(), todoRouter);
 
 const doneRouter = require("./routes/isDone");

@@ -25,7 +25,7 @@ router.post("/signup", signup, (req, res) => {
  * @method POST
  * @summary 내 정보 조회
  */
-router.get("/view", view, (req, res) => {
+router.get("/view", verifyToken, view, (req, res) => {
     res.json({ success: true, message: "view 성공", data: req.user });
 });
 

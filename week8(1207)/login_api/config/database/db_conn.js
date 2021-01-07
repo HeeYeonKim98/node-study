@@ -1,6 +1,6 @@
-const mysql = require("mysql2");
+const mysql = require("mysql2/promise");
 
-const config = require("./db_config");
+const config = require("./db_config").local;
 const pool = mysql.createPool({
     ...config,
     waitForConnections: true,

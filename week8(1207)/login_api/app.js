@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const indexRouter = require("./routes/index");
-app.use("/api", indexRouter);
+app.use("/", indexRouter);
 const userRouter = require("./routes/user");
 app.use("/api/user", userRouter);
 

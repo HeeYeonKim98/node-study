@@ -10,7 +10,7 @@ const { signToken, verifyToken } = require("../controller/tokenControl");
  * @summary 로그인
  */
 router.post("/login", login, (req, res) => {
-    res.json({ success: true, message: "login 성공" });
+    res.json({ success: true, message: "login 성공", data: req.token });
 });
 
 /**
@@ -26,5 +26,5 @@ router.post("/signup", signup, (req, res) => {
  * @summary 내 정보 조회
  */
 router.get("/view", view, (req, res) => {
-    res.json({ success: true, message: "view 성공" });
+    res.json({ success: true, message: "view 성공", data: req.user });
 });

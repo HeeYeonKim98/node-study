@@ -10,6 +10,7 @@ module.exports = {
             res.json({ success: false, message: signtokenErr });
         }
     },
+
     verifyToken: (req, res, next) => {
         try {
             const token = req.headers.authorization;
